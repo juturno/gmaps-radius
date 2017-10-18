@@ -119,7 +119,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
         position: e.latLng,
         label: labels[labelIndex++ % labels.length],
         map: map,
-        draggable: true
+        draggable: false
       });
       circle = new google.maps.Circle({
         center: marker.position,
@@ -136,6 +136,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
       });
 
       google.maps.event.addListener(circle, 'rightclick', polygonDestructionHandler);
+      google.maps.event.addListener(marker, 'rightclick', polygonDestructionHandler);
       return google.maps.event.addListener(circle, 'click', circleDrawHandler);
     };
     google.maps.event.addListener(map, 'click', circleDrawHandler);
