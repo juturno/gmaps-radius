@@ -83,6 +83,8 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
         position: google.maps.ControlPosition.TOP_RIGHT
       }
     });
+    var labels = '123456789';
+    var labelIndex = 0;
     earthRadii = {
       mi: 3963.1676,
       km: 6378.1,
@@ -108,7 +110,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
       return markers = [];
     };
     circleDrawHandler = function(e) {
-      var circle, radius, select, unitKey;
+      var circle, radius, select, unitKey, marker;
       select = $('#unitSelector');
       unitKey = $('option', select).eq(select[0].selectedIndex).val();
       radius = parseFloat(document.getElementById('radiusInput').value);
@@ -126,6 +128,12 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
         strokeOpacity: 0.62,
         strokeWeight: 1
       });
+      marker = new google.maps.Marker({
+        position: e.latLng,
+        label: labels[labelIndex++ % labels.length],
+        map: map,
+        draggable: true
+        });
       google.maps.event.addListener(circle, 'rightclick', polygonDestructionHandler);
       return google.maps.event.addListener(circle, 'click', circleDrawHandler);
     };
