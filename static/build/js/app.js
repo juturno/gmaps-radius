@@ -72,7 +72,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
       zoom: 10,
       center: new google.maps.LatLng(51.500358, -0.125506),
       mapType: google.maps.MapTypeId.ROADMAP,
-      disableDefaultUI: true,
+      disableDefaultUI: false,
       mapTypeControl: true,
       zoomControl: true,
       mapTypeControlOptions: {
