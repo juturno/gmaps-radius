@@ -115,10 +115,16 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
       unitKey = $('option', select).eq(select[0].selectedIndex).val();
       radius = parseFloat(document.getElementById('radiusInput').value);
       radius = (radius / earthRadii[unitKey]) * earthRadii['mt'];
+      marker = new google.maps.Marker({
+        position: e.latLng,
+        label: labels[labelIndex++ % labels.length],
+        map: map,
+        draggable: true
+      });
       circle = new google.maps.Circle({
-        center: e.latLng,
+        center: marker.position,
         clickable: true,
-        draggable: true,
+        draggable: false,
         editable: false,
         fillColor: '#004de8',
         fillOpacity: 0.27,
@@ -128,12 +134,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
         strokeOpacity: 0.62,
         strokeWeight: 1
       });
-      marker = new google.maps.Marker({
-        position: e.latLng,
-        label: labels[labelIndex++ % labels.length],
-        map: map,
-        draggable: true
-        });
+
       google.maps.event.addListener(circle, 'rightclick', polygonDestructionHandler);
       return google.maps.event.addListener(circle, 'click', circleDrawHandler);
     };
