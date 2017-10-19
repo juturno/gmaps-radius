@@ -139,7 +139,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
       google.maps.event.addListener(marker, 'rightclick', polygonDestructionHandler);
 	  
 	  google.maps.event.addListener(marker, 'drag', function(){
-	  circle.polygonDestructionHandler())
+	  return circle.setMap(null);
 	  };
 	  
 	  
