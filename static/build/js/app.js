@@ -166,7 +166,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
         strokeOpacity: 0.62,
         strokeWeight: 1
       });
-    });
+    };
     google.maps.event.addListener(map, 'click', circleDrawHandler);
     searchInput = document.getElementById('searchInput');
     $(searchInput.form).on({
