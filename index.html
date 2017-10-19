@@ -37,10 +37,17 @@
             <option value="fr">Furlongs</option>
         </select>
         <p>Click to place a circle, right click to remove</p>
+        
+        <script>for (var i=0; i<5; i++) {
+        document.write("<tr><td>Number " + i + " is:</td>");
+        document.write("<td>" + coords[i] + "</td></tr>");
+        }</script>
+
     </form>
 
     <form id="search">
         <input type="text" id="searchInput" name="searchInput" placeholder="Search for a place&hellip;" />
+        
     </form>
 
     <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAe0EfbbPqxVqbWjfuRe2wYl5aeSCZ3FMw&amp;libraries=places"></script>
