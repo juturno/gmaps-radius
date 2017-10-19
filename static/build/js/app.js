@@ -66,7 +66,8 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
 
 (function() {
   $(function() {
-    var circleDrawHandler, clearMarkers, earthRadii, map, markers, polygonDestructionHandler, searchBox, searchInput, updateURL;
+    var circleDrawHandler, circleDrawHandlerA, clearMarkers, earthRadii, map, markers, polygonDestructionHandler, searchBox, searchInput, updateURL, coords;
+    coords = [];
     markers = [];
     map = new google.maps.Map($('#map')[0], {
       zoom: 10,
@@ -134,11 +135,38 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
         strokeOpacity: 0.62,
         strokeWeight: 1
       });
-
+      
+      google.maps.event.addListener(marker, drag, function() {
+        return circle.setMap(null);
+      });
+      google.maps.event.addListener(marker, dragend, function() {
+        circleDrawHandlerA(marker.position)
+      });
+      
       google.maps.event.addListener(circle, 'rightclick', polygonDestructionHandler);
       google.maps.event.addListener(marker, 'rightclick', polygonDestructionHandler);
       return google.maps.event.addListener(circle, 'click', circleDrawHandler);
     };
+    circleDrawHandlerA = function(e) {
+      var circle, radius, select, unitKey, marker;
+      select = $('#unitSelector');
+      unitKey = $('option', select).eq(select[0].selectedIndex).val();
+      radius = parseFloat(document.getElementById('radiusInput').value);
+      radius = (radius / earthRadii[unitKey]) * earthRadii['mt'];
+      circle = new google.maps.Circle({
+        center: marker.position,
+        clickable: true,
+        draggable: false,
+        editable: false,
+        fillColor: '#004de8',
+        fillOpacity: 0.27,
+        map: map,
+        radius: radius,
+        strokeColor: '#004de8',
+        strokeOpacity: 0.62,
+        strokeWeight: 1
+      });
+    });
     google.maps.event.addListener(map, 'click', circleDrawHandler);
     searchInput = document.getElementById('searchInput');
     $(searchInput.form).on({
