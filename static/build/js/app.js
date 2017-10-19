@@ -196,12 +196,12 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
 
         });
 		
-		var circle, radius, select, unitKey, marker;
+	var circle, radius, select, unitKey, marker;
         select = $('#unitSelector');
         unitKey = $('option', select).eq(select[0].selectedIndex).val();
         radius = parseFloat(document.getElementById('radiusInput').value);
         radius = (radius / earthRadii[unitKey]) * earthRadii['mt'];
-		circle = new google.maps.Circle({
+	circle = new google.maps.Circle({
         center: marker.position,
         editable: false,
         fillColor: '#004de8',
@@ -210,11 +210,11 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
         radius: radius,
         strokeColor: '#004de8',
         strokeOpacity: 0.62,
-        strokeWeight: 1
-		id: markerLabel
-		});
+        strokeWeight: 1,
+	id: markerLabel
+	});
 		
-		circle.bindTo('center', marker, 'position');
+	circle.bindTo('center', marker, 'position');
 	  
 	  
 	  
