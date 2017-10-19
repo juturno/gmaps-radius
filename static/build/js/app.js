@@ -119,7 +119,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
         position: e.latLng,
         label: labels[labelIndex++ % labels.length],
         map: map,
-        draggable: false
+        draggable: true
       });
       circle = new google.maps.Circle({
         center: marker.position,
