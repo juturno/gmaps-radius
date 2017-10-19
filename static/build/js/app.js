@@ -214,7 +214,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
 		id: markerLabel
 		});
 		
-		circle.bindTo('center', marker, 'position')
+		circle.bindTo('center', marker, 'position');
 	  
 	  
 	  
