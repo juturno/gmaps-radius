@@ -137,6 +137,12 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
 
       google.maps.event.addListener(circle, 'rightclick', polygonDestructionHandler);
       google.maps.event.addListener(marker, 'rightclick', polygonDestructionHandler);
+	  
+	  google.maps.event.addListener(marker, 'drag', function(){
+	  circle.polygonDestructionHandler())
+	  };
+	  
+	  
       return google.maps.event.addListener(circle, 'click', circleDrawHandler);
     };
     google.maps.event.addListener(map, 'click', circleDrawHandler);
@@ -222,7 +228,3 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
   });
 
 }).call(this);
-
-//
-
-//# sourceMappingURL=app.js.map
