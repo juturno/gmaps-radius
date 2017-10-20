@@ -68,7 +68,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
   $(function() {
     var circleDrawHandler, clearMarkers, earthRadii, map, markers, polygonDestructionHandler, searchBox, searchInput, updateURL, coords;
     markers = [];
-	coords = [];
+    coords = ["-","-","-","-","-","-"];
     map = new google.maps.Map($('#map')[0], {
       zoom: 10,
       center: new google.maps.LatLng(51.500358, -0.125506),
