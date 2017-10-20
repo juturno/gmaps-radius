@@ -194,8 +194,6 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
 		google.maps.event.addListener(marker, 'rightclick', function(){
 		  infowindow.open(map, marker);
 		});
-
-        });
 		
 		var circle, radius, select, unitKey, marker;
         select = $('#unitSelector');
