@@ -180,19 +180,20 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
     };
 	
 	function placeMarker(e){
-		var marker, circle;
+		var marker, circle, coords;
 		marker = new google.maps.Marker({
             position: e.latLng,
 			label: labels[labelIndex++ % labels.length],
 			map: map,
 			draggable: true
 		});
+		var infowindow = new google.maps.InfoWindow({
+          	  content: marker.position.toString()
+        	});
 		
-		var markerLabel = labels.length - 1;
-		coords[markerLabel] = e.latLng;
-		
-		google.maps.event.addListener(marker, 'dragend', function() { //Dragging marker event
-            coords[markerLabel] = this.getPosition();
+		google.maps.event.addListener(marker, 'rightclick', function(){
+		  infowindow.open(map, marker);
+		});
 
         });
 		
