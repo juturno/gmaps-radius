@@ -222,7 +222,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
 	  
 		
 		
-	}
+	};
     google.maps.event.addListener(map, 'click', placeMarker);
     searchInput = document.getElementById('searchInput');
     $(searchInput.form).on({
