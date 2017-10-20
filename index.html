@@ -28,11 +28,11 @@
     <script type="text/javascript" src="./static/build/js/app.js"></script>
     
     <form id="options">
-        <label for="radiusInput">Radius</label> <input type="number" value="5" min="0" id="radiusInput" name="radiusInput" autofocus />
+        <label for="radiusInput">Radius</label> <input type="number" value="330" min="0" id="radiusInput" name="radiusInput" autofocus />
         <label for="unitSelector">Units</label> <select id="unitSelector" name="unitSelector">
+            <option value="ft">Feet</option>
             <option value="mi">Miles</option>
             <option value="km">Kilometers</option>
-            <option value="ft">Feet</option>
             <option value="mt">Metres</option>
             <option value="in">Inches</option>
             <option value="yd">Yards</option>
@@ -43,11 +43,6 @@
             <option value="fr">Furlongs</option>
         </select>
         <p>Click to place a circle, right click to remove</p>
-        
-        <script>for (var i=0; i<5; i++) {
-        document.write("<tr><td>Number " + i + " is:</td>");
-        document.write("<td>" +  window.labels.toString() + "</td></tr>");
-        }</script>
 
     </form>
 
