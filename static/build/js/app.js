@@ -188,7 +188,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
 			draggable: true
 		});
 		var infowindow = new google.maps.InfoWindow({
-          	  content: marker.position.toString()
+          	  content: marker.position.toString();
         	});
 		
 		google.maps.event.addListener(marker, 'rightclick', function(){
