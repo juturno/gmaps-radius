@@ -136,7 +136,6 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
         strokeOpacity: 0.62,
         strokeWeight: 1
       });
-
       google.maps.event.addListener(circle, 'rightclick', polygonDestructionHandler);
       google.maps.event.addListener(marker, 'rightclick', polygonDestructionHandler);
 	  
@@ -180,20 +179,21 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
     };
 	
 	function placeMarker(e){
-		var marker, circle, coords;
+		var marker, circle;
 		marker = new google.maps.Marker({
             position: e.latLng,
 			label: labels[labelIndex++ % labels.length],
 			map: map,
 			draggable: true
 		});
-		var infowindow = new google.maps.InfoWindow({
-          	  content: marker.position.toString();
-        	});
 		
-		google.maps.event.addListener(marker, 'rightclick', function(){
-		  infowindow.open(map, marker);
-		});
+		var markerLabel = labels.length - 1;
+		coords[markerLabel] = e.latLng;
+		
+		google.maps.event.addListener(marker, 'dragend', function() { //Dragging marker event
+            coords[markerLabel] = this.getPosition();
+
+        });
 		
 		var circle, radius, select, unitKey, marker;
         select = $('#unitSelector');
@@ -219,7 +219,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
 	  
 		
 		
-	};
+	}
     google.maps.event.addListener(map, 'click', placeMarker);
     searchInput = document.getElementById('searchInput');
     $(searchInput.form).on({
