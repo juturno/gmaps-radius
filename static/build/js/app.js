@@ -72,7 +72,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
     map = new google.maps.Map($('#map')[0], {
       zoom: 15,
       center: new google.maps.LatLng(40.718433, -74.037597),
-      mapType: google.maps.MapTypeId.ROADMAP,
+      mapType: google.maps.MapTypeId.satellite,
       disableDefaultUI: false,
       mapTypeControl: true,
       zoomControl: true,
