@@ -202,6 +202,8 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
 			infowindow.setContent(marker.position.lat().toFixed(6).toString() + ", " + marker.position.lng().toFixed(6).toString())
 		});
 		
+		google.maps.event.addListener(marker, 'dblclick', polygonDestructionHandler);
+		
 		var circle, radius, select, unitKey, marker;
         select = $('#unitSelector');
         unitKey = $('option', select).eq(select[0].selectedIndex).val();
