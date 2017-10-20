@@ -71,7 +71,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
     coords = ["-","-","-","-","-","-"];
     map = new google.maps.Map($('#map')[0], {
       zoom: 10,
-      center: new google.maps.LatLng(51.500358, -0.125506),
+      center: new google.maps.LatLng(40.718433, -74.037597),
       mapType: google.maps.MapTypeId.ROADMAP,
       disableDefaultUI: false,
       mapTypeControl: true,
