@@ -70,7 +70,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
     markers = [];
     coords = ["-","-","-","-","-","-"];
     map = new google.maps.Map($('#map')[0], {
-      zoom: 10,
+      zoom: 15,
       center: new google.maps.LatLng(40.718433, -74.037597),
       mapType: google.maps.MapTypeId.ROADMAP,
       disableDefaultUI: false,
