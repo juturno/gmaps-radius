@@ -202,7 +202,9 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
 			infowindow.setContent(marker.position.lat().toFixed(6).toString() + ", " + marker.position.lng().toFixed(6).toString())
 		});
 		
-		google.maps.event.addListener(marker, 'dblclick', polygonDestructionHandler);
+		google.maps.event.addListener(marker, 'dblclick', function(){
+			this.setMap(null)
+		});
 		
 		var circle, radius, select, unitKey, marker;
         select = $('#unitSelector');
@@ -224,7 +226,9 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
 		
 		circle.bindTo('center', marker, 'position');
 	  
-	  
+		google.maps.event.addListener(circle, 'dblclick', function(){
+			this.setMap(null)
+		});
 	  
 		
 		
