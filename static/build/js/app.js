@@ -198,7 +198,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
 		  infowindow.open(map, marker);
 		});
 		google.maps.event.addListener(marker, 'dragend', function(){
-			infowindow.content = marker.position.toString()
+			infowindow.setContent(marker.position.toString())
 		});
 		
 		var circle, radius, select, unitKey, marker;
