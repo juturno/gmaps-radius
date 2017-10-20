@@ -191,7 +191,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
 		coords[markerLabel] = e.latLng;
 		
 		var infowindow = new google.maps.InfoWindow({
-          	  content: marker.position.toString()
+          	  content: marker.position.lat().toFixed(6).toString() + ", " + marker.position.lng().toFixed(6).toString()
         	});
 		
 		google.maps.event.addListener(marker, 'rightclick', function(){
