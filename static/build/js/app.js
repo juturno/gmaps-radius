@@ -194,7 +194,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
           	  content: marker.position.lat().toFixed(6).toString() + ", " + marker.position.lng().toFixed(6).toString()
         	});
 		
-		google.maps.event.addListener(marker, 'rightclick', function(){
+		google.maps.event.addListener(marker, 'dblclick', function(){
 		  infowindow.open(map, marker);
 		});
 		google.maps.event.addListener(marker, 'dragend', function(){
@@ -202,7 +202,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
 			infowindow.setContent(marker.position.lat().toFixed(6).toString() + ", " + marker.position.lng().toFixed(6).toString())
 		});
 		
-		google.maps.event.addListener(marker, 'dblclick', function(){
+		google.maps.event.addListener(marker, 'rightclick', function(){
 			this.setMap(null)
 		});
 		
@@ -226,7 +226,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
 		
 		circle.bindTo('center', marker, 'position');
 	  
-		google.maps.event.addListener(circle, 'dblclick', function(){
+		google.maps.event.addListener(circle, 'rightclick', function(){
 			this.setMap(null)
 		});
 	  
